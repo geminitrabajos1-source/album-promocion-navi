@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <meta name="theme-color" content="#07090E">
+  <meta name="description" content="Álbum colaborativo y libro de firmas en vivo de la Ceremonia y Fiesta de Graduación - Promoción Navi, I.E. Gloriabamba de Bolívar, El Huayo, Cajabamba.">
+  <title>Graduación Promoción Navi | I.E. Gloriabamba de Bolívar</title>
+
+  <!-- Tipografías caligráficas y editoriales de gala -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,400;1,600&family=Great+Vibes&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <!-- Hoja de estilos principal -->
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Lienzo ligero de destellos dorados flotantes -->
+  <canvas id="particulas-doradas" class="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- Barra de estado de conexión (se muestra automáticamente en red lenta o sin conexión) -->
+  <div id="aviso-conexion" class="network-banner" role="status" aria-live="polite" hidden>
+    <span class="network-dot" aria-hidden="true"></span>
+    <span id="aviso-conexion-texto">Conexión móvil moderada detectada: optimizaremos tus fotos para que carguen más rápido.</span>
+  </div>
+
+  <!-- Navegación rápida superior (estilo gala minimalista para móviles) -->
+  <header class="topbar" id="inicio">
+    <div class="container topbar-inner">
+      <a href="#tarjeta-invitacion" class="brand-mark">
+        <span class="brand-dot" aria-hidden="true"></span>
+        <span>Promoción Navi</span>
+      </a>
+      <nav class="topbar-nav" aria-label="Navegación principal">
+        <a href="#subir-recuerdo">Subir recuerdo</a>
+        <a href="#galeria-en-vivo">Álbum en vivo</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- =====================================================
+         SECCIÓN 1: TARJETA DE INICIO / INVITACIÓN DE GALA
+         ===================================================== -->
+    <section id="tarjeta-invitacion" class="hero-section">
+      <div class="container">
+        <article class="invitation-card reveal is-visible" aria-label="Invitación de Graduación Promoción Navi">
+          <!-- Fondo sutil opcional inspirado en assets/img/descarga.jpg -->
+          <div class="invitation-backdrop" aria-hidden="true"></div>
+
+          <!-- Marco ornamental SVG/CSS en dorado metálico (nitidez total en cualquier pantalla) -->
+          <div class="gold-frame-outer" aria-hidden="true">
+            <div class="gold-frame-inner"></div>
+            <!-- Esquinas ornamentales SVG -->
+            <svg class="corner-ornament corner-tl" viewBox="0 0 120 120" fill="none">
+              <path d="M10 110 C10 55, 20 20, 110 10" stroke="url(#gradOro)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M22 92 C20 52, 34 30, 88 22" stroke="url(#gradOro)" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M35 55 C28 42, 42 28, 55 35 C48 44, 42 49, 35 55 Z" fill="url(#gradOro)" opacity="0.85"/>
+              <circle cx="18" cy="18" r="3.5" fill="#F3E5AB"/>
+              <defs>
+                <linearGradient id="gradOro" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#F3E5AB"/>
+                  <stop offset="50%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B2C"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <svg class="corner-ornament corner-tr" viewBox="0 0 120 120" fill="none">
+              <path d="M10 110 C10 55, 20 20, 110 10" stroke="url(#gradOro2)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M22 92 C20 52, 34 30, 88 22" stroke="url(#gradOro2)" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M35 55 C28 42, 42 28, 55 35 C48 44, 42 49, 35 55 Z" fill="url(#gradOro2)" opacity="0.85"/>
+              <circle cx="18" cy="18" r="3.5" fill="#F3E5AB"/>
+              <defs>
+                <linearGradient id="gradOro2" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#F3E5AB"/>
+                  <stop offset="50%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B2C"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <svg class="corner-ornament corner-bl" viewBox="0 0 120 120" fill="none">
+              <path d="M10 110 C10 55, 20 20, 110 10" stroke="url(#gradOro3)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M22 92 C20 52, 34 30, 88 22" stroke="url(#gradOro3)" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M35 55 C28 42, 42 28, 55 35 C48 44, 42 49, 35 55 Z" fill="url(#gradOro3)" opacity="0.85"/>
+              <circle cx="18" cy="18" r="3.5" fill="#F3E5AB"/>
+              <defs>
+                <linearGradient id="gradOro3" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#F3E5AB"/>
+                  <stop offset="50%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B2C"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <svg class="corner-ornament corner-br" viewBox="0 0 120 120" fill="none">
+              <path d="M10 110 C10 55, 20 20, 110 10" stroke="url(#gradOro4)" stroke-width="2.2" stroke-linecap="round"/>
+              <path d="M22 92 C20 52, 34 30, 88 22" stroke="url(#gradOro4)" stroke-width="1.3" stroke-linecap="round"/>
+              <path d="M35 55 C28 42, 42 28, 55 35 C48 44, 42 49, 35 55 Z" fill="url(#gradOro4)" opacity="0.85"/>
+              <circle cx="18" cy="18" r="3.5" fill="#F3E5AB"/>
+              <defs>
+                <linearGradient id="gradOro4" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
+                  <stop offset="0%" stop-color="#F3E5AB"/>
+                  <stop offset="50%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B2C"/>
+                </linearGradient>
+              </defs>
+            </svg>
+          </div>
+
+          <div class="invitation-content">
+            <!-- Cenefa superior SVG inspirada en assets/img/descarga (1).jpg -->
+            <div class="filigree-divider" aria-hidden="true">
+              <svg viewBox="0 0 360 34" fill="none">
+                <line x1="8" y1="17" x2="132" y2="17" stroke="url(#lineaOroTop)" stroke-width="1.4"/>
+                <line x1="228" y1="17" x2="352" y2="17" stroke="url(#lineaOroTopR)" stroke-width="1.4"/>
+                <path d="M180 4 L188 12 L180 20 L172 12 Z" fill="#F3E5AB"/>
+                <path d="M174 17 C160 8, 142 12, 146 24 C150 32, 168 29, 178 19" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M186 17 C200 8, 218 12, 214 24 C210 32, 192 29, 182 19" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="lineaOroTop" x1="8" y1="17" x2="132" y2="17" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#D4AF37" stop-opacity="0"/>
+                    <stop offset="100%" stop-color="#F3E5AB"/>
+                  </linearGradient>
+                  <linearGradient id="lineaOroTopR" x1="228" y1="17" x2="352" y2="17" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#F3E5AB"/>
+                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <!-- Emblema Birrete y Diploma en SVG dorado limpio -->
+            <div class="emblem-wrap" aria-hidden="true">
+              <svg class="grad-emblem" viewBox="0 0 180 110" fill="none">
+                <!-- Halo sutil azul Navi detrás del birrete -->
+                <ellipse cx="90" cy="55" rx="68" ry="34" fill="url(#naviGlow)" opacity="0.4"/>
+                <!-- Birrete -->
+                <polygon points="90,14 162,38 90,62 18,38" fill="url(#capTop)" stroke="#F3E5AB" stroke-width="1.3"/>
+                <path d="M46 49 L46 72 C46 80, 134 80, 134 72 L134 49 L90 64 Z" fill="url(#capBase)" stroke="#D4AF37" stroke-width="1.2"/>
+                <!-- Borla dorada -->
+                <circle cx="90" cy="38" r="3" fill="#FFF3C4"/>
+                <path d="M90 38 L138 45 L138 74" stroke="#F3E5AB" stroke-width="2" stroke-linecap="round"/>
+                <path d="M134 74 L142 74 L144 90 L132 90 Z" fill="url(#capTop)"/>
+                <!-- Diploma enrollado -->
+                <g transform="rotate(-12 72 82)">
+                  <rect x="34" y="72" width="76" height="18" rx="9" fill="url(#diplomaGrad)" stroke="#FFF2C2" stroke-width="1.1"/>
+                  <ellipse cx="38" cy="81" rx="4.5" ry="8.5" fill="#7C5E1A" stroke="#F3E5AB" stroke-width="1"/>
+                  <rect x="66" y="71" width="12" height="20" rx="2" fill="#1E3A8A" stroke="#38BDF8" stroke-width="0.9"/>
+                  <path d="M68 90 L63 102 L71 97 Z" fill="#D4AF37"/>
+                  <path d="M76 90 L81 102 L73 97 Z" fill="#F3E5AB"/>
+                </g>
+                <defs>
+                  <radialGradient id="naviGlow" cx="0.5" cy="0.5" r="0.5">
+                    <stop offset="0%" stop-color="#38BDF8" stop-opacity="0.65"/>
+                    <stop offset="100%" stop-color="#1E3A8A" stop-opacity="0"/>
+                  </radialGradient>
+                  <linearGradient id="capTop" x1="18" y1="14" x2="162" y2="62" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FFF2BD"/>
+                    <stop offset="50%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#9A741B"/>
+                  </linearGradient>
+                  <linearGradient id="capBase" x1="46" y1="49" x2="134" y2="80" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#B88E26"/>
+                    <stop offset="55%" stop-color="#E8CA68"/>
+                    <stop offset="100%" stop-color="#7B5C13"/>
+                  </linearGradient>
+                  <linearGradient id="diplomaGrad" x1="34" y1="72" x2="110" y2="90" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#FBF1C7"/>
+                    <stop offset="50%" stop-color="#E6C25A"/>
+                    <stop offset="100%" stop-color="#A88224"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+
+            <p class="event-kicker">Ceremonia y Fiesta de</p>
+            <h1 class="script-title">Graduación</h1>
+
+            <div class="promo-badge">
+              <span class="promo-label">Promoción</span>
+              <span class="promo-name">Navi</span>
+            </div>
+
+            <p class="institution-name">I.E. Gloriabamba de Bolívar</p>
+
+            <!-- Metadatos del evento -->
+            <ul class="event-details" aria-label="Detalles del evento">
+              <li>
+                <span class="detail-icon" aria-hidden="true">✦</span>
+                <span><strong>Lugar:</strong> Restaurante Las Gramas · El Huayo, Cajabamba</span>
+              </li>
+              <li>
+                <span class="detail-icon" aria-hidden="true">✦</span>
+                <span><strong>Fecha:</strong>28 de Noviembre 2026</span>
+              </li>
+            </ul>
+
+            <!-- Mensaje motivador para egresados, familias y docentes -->
+            <blockquote class="motivational-quote">
+              <p>
+                “Hoy celebramos mucho más que el cierre de una etapa escolar: celebramos cada esfuerzo compartido, las risas en las aulas, el abrazo incondicional de nuestras familias y la guía paciente de nuestros docentes. Que los recuerdos de la <strong>Promoción Navi</strong> iluminen el inicio de nuevos sueños, metas y caminos por conquistar.”
+              </p>
+            </blockquote>
+
+            <!-- Botones de acción principal -->
+            <div class="hero-actions">
+              <a href="#subir-recuerdo" class="btn btn-gold">
+                <span aria-hidden="true">✦</span> Subir foto, video o saludo
+              </a>
+              <a href="#galeria-en-vivo" class="btn btn-navy-outline">
+                <span aria-hidden="true">◈</span> Ver álbum en vivo
+              </a>
+            </div>
+
+            <!-- Cenefa inferior SVG -->
+            <div class="filigree-divider filigree-bottom" aria-hidden="true">
+              <svg viewBox="0 0 360 34" fill="none">
+                <line x1="8" y1="17" x2="132" y2="17" stroke="url(#lineaOroBot)" stroke-width="1.4"/>
+                <line x1="228" y1="17" x2="352" y2="17" stroke="url(#lineaOroBotR)" stroke-width="1.4"/>
+                <path d="M180 30 L188 22 L180 14 L172 22 Z" fill="#F3E5AB"/>
+                <path d="M174 17 C160 26, 142 22, 146 10 C150 2, 168 5, 178 15" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+                <path d="M186 17 C200 26, 218 22, 214 10 C210 2, 192 5, 182 15" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+                <defs>
+                  <linearGradient id="lineaOroBot" x1="8" y1="17" x2="132" y2="17" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#D4AF37" stop-opacity="0"/>
+                    <stop offset="100%" stop-color="#F3E5AB"/>
+                  </linearGradient>
+                  <linearGradient id="lineaOroBotR" x1="228" y1="17" x2="352" y2="17" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#F3E5AB"/>
+                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0"/>
+                  </linearGradient>
+                </defs>
+              </svg>
+            </div>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECCIÓN EMOTIVA: DEDICATORIA ESPECIAL (CON IMAGEN DE REFERENCIA)
+         ===================================================== -->
+    <section class="tribute-section reveal" aria-label="Agradecimiento especial">
+      <div class="container">
+        <div class="glass-card tribute-card">
+          <div class="tribute-media">
+            <img
+              src="assets/img/descarga (2).jpg"
+              alt="Detalle emotivo con flores doradas iluminadas para las familias y docentes"
+              loading="lazy"
+              decoding="async"
+            >
+          </div>
+          <div class="tribute-text">
+            <span class="section-eyebrow">Con gratitud infinita</span>
+            <h2>A nuestras familias y docentes</h2>
+            <p>
+              Este álbum colaborativo guarda la memoria viva de nuestra noche de gala. Cada fotografía, video y dedicatoria que compartas hoy será un tesoro para quienes hicieron posible este logro en la <strong>I.E. Gloriabamba de Bolívar</strong>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separador dorado -->
+    <div class="section-ornament reveal" aria-hidden="true">
+      <span></span><i>✦</i><span></span>
+    </div>
+
+    <!-- =====================================================
+         PUERTA DE ACCESO AL EVENTO (SOLO INVITADOS CON CLAVE/QR)
+         ===================================================== -->
+    <section id="panel-acceso" class="access-gate-section" hidden>
+      <div class="container">
+        <div class="glass-card access-card">
+          <span class="section-eyebrow">Acceso Privado del Evento</span>
+          <h2>Ingresa el código de la graduación</h2>
+          <p>
+            Para proteger los recuerdos de la <strong>Promoción Navi</strong>, este álbum es exclusivo para asistentes e invitados. Si escaneaste el QR de la mesa, se desbloqueará automáticamente; de lo contrario, escribe la clave de la invitación.
+          </p>
+
+          <form id="form-acceso" class="access-form" novalidate>
+            <label for="input-clave-evento" class="sr-only">Código del evento</label>
+            <input
+              type="password"
+              id="input-clave-evento"
+              name="clave"
+              maxlength="40"
+              required
+              autocomplete="off"
+              placeholder="Escriba la contrseña..."
+            >
+            <button type="submit" id="btn-desbloquear" class="btn btn-gold">
+              Ingresar al álbum
+            </button>
+          </form>
+
+          <div id="feedback-acceso" class="form-feedback" role="alert" hidden></div>
+        </div>
+      </div>
+    </section>
+
+    <div id="contenido-protegido">
+    <!-- =====================================================
+         SECCIÓN 2: SUBIR RECUERDOS Y DEJAR DEDICATORIA
+         ===================================================== -->
+    <section id="subir-recuerdo" class="upload-section reveal">
+      <div class="container">
+        <header class="section-header">
+          <span class="section-eyebrow">Álbum Colaborativo</span>
+          <h2>Comparte tu recuerdo</h2>
+          <p>
+            Sube fotos, videos o escribe una dedicatoria para la <strong>Promoción Navi</strong>. También puedes explorar libremente las publicaciones de otros invitados más abajo.
+          </p>
+        </header>
+
+        <div class="glass-card upload-card">
+          <!-- Avisos claros para invitados en celular -->
+          <div class="info-alerts" role="note" aria-label="Indicaciones importantes de envío">
+            <div class="alert-item">
+              <span class="alert-icon" aria-hidden="true">✦</span>
+              <p><strong>Fotos rápidas:</strong> Se optimizan automáticamente en tu celular para subir en segundos sin gastar muchos datos.</p>
+            </div>
+            <div class="alert-item">
+              <span class="alert-icon" aria-hidden="true">▶</span>
+              <p><strong>Videos (máx. 300 MB):</strong> Soportamos videos de hasta <strong>300 MB</strong> por archivo. Si tienes señal móvil moderada, te recomendamos clips cortos (15 a 60 s).</p>
+            </div>
+            <div class="alert-item alert-immutable">
+              <span class="alert-icon" aria-hidden="true">◈</span>
+              <p><strong>Archivo conmemorativo permanente:</strong> Por seguridad del álbum, una vez enviado tu recuerdo o mensaje <strong>no podrá editarse ni eliminarse</strong>. Todos los invitados podrán verlo en el álbum en vivo.</p>
+            </div>
+          </div>
+
+          <div id="aviso-subidas-cerradas" class="uploads-closed-banner" hidden>
+            <strong>Recepción de recuerdos finalizada:</strong> El álbum ahora se encuentra en modo solo lectura para revivir los momentos de la Promoción Navi.
+          </div>
+
+          <form id="form-recuerdo" class="upload-form" novalidate>
+            <!-- Nombre o vínculo -->
+            <div class="form-group">
+              <label for="input-nombre">Tu nombre o vínculo <span class="required">*</span></label>
+              <input
+                type="text"
+                id="input-nombre"
+                name="nombre"
+                maxlength="80"
+                required
+                autocomplete="name"
+                placeholder="Ej. Mamá de Lucía, Prof. Carlos, Compañero Juan..."
+              >
+              <div class="role-chips" aria-label="Sugerencias rápidas de vínculo">
+                <button type="button" class="chip-btn" data-prefix="Egresado/a · ">🎓 Egresado/a</button>
+                <button type="button" class="chip-btn" data-prefix="Familia · ">💛 Familia</button>
+                <button type="button" class="chip-btn" data-prefix="Docente · ">📘 Docente</button>
+                <button type="button" class="chip-btn" data-prefix="Invitado/a · ">✨ Invitado/a</button>
+              </div>
+            </div>
+
+            <!-- Comentario / Dedicatoria -->
+            <div class="form-group">
+              <div class="label-row">
+                <label for="input-mensaje">Dedicatoria o mensaje <span class="required">*</span></label>
+                <span id="contador-caracteres" class="char-counter">0 / 500</span>
+              </div>
+              <textarea
+                id="input-mensaje"
+                name="mensaje"
+                rows="4"
+                maxlength="500"
+                required
+                placeholder="Escribe tus felicitaciones, un recuerdo inolvidable o tus mejores deseos para la Promoción Navi..."
+              ></textarea>
+            </div>
+
+            <!-- Selector de fotos o videos (opcional, permite dedicatoria pura o multimedia) -->
+            <div class="form-group">
+              <label for="input-archivos">Fotos o videos <span class="optional-tag">(opcional · uno o varios)</span></label>
+              <label for="input-archivos" class="dropzone" id="dropzone-archivos">
+                <input
+                  type="file"
+                  id="input-archivos"
+                  name="archivos"
+                  accept="image/*,video/*"
+                  multiple
+                  class="sr-only"
+                >
+                <span class="dropzone-icon" aria-hidden="true">✦</span>
+                <span class="dropzone-title">Toca aquí para elegir fotos o videos</span>
+                <span class="dropzone-sub">Formatos de cámara del celular · Videos hasta 300 MB c/u · O envía solo tu dedicatoria</span>
+              </label>
+
+              <!-- Previsualización de archivos elegidos antes de enviar -->
+              <div id="lista-previsualizacion" class="preview-grid" hidden></div>
+            </div>
+
+            <!-- Barra de progreso real de subida -->
+            <div id="progreso-envio" class="upload-progress" hidden aria-live="polite">
+              <div class="progress-header">
+                <span id="progreso-texto">Preparando envío...</span>
+                <span id="progreso-porcentaje">0%</span>
+              </div>
+              <div class="progress-track">
+                <div id="progreso-barra" class="progress-fill" style="width: 0%"></div>
+              </div>
+            </div>
+
+            <!-- Mensajes de feedback (error / éxito) -->
+            <div id="feedback-formulario" class="form-feedback" role="alert" hidden></div>
+
+            <button type="submit" id="btn-enviar" class="btn btn-gold btn-submit">
+              <span class="btn-label">Publicar en el álbum en vivo</span>
+            </button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Separador dorado -->
+    <div class="section-ornament reveal" aria-hidden="true">
+      <span></span><i>✦</i><span></span>
+    </div>
+
+    <!-- =====================================================
+         SECCIÓN 3: GALERÍA Y LIBRO DE FIRMAS EN VIVO
+         ===================================================== -->
+    <section id="galeria-en-vivo" class="gallery-section reveal">
+      <div class="container">
+        <header class="section-header">
+          <div class="live-status-pill" id="estado-fuente">
+            <span class="live-dot" aria-hidden="true"></span>
+            <span id="estado-fuente-texto">Modo demostración (datos de ejemplo)</span>
+          </div>
+          <h2>Recuerdos y Dedicatorias en Vivo</h2>
+          <p>
+            Toca cualquier fotografía, video o mensaje para abrirlo en vista ampliada.
+          </p>
+        </header>
+
+        <!-- Barra de filtros y actualización -->
+        <div class="gallery-toolbar">
+          <div class="filter-tabs" role="tablist" aria-label="Filtrar recuerdos">
+            <button type="button" class="filter-btn is-active" data-filter="todos" role="tab" aria-selected="true">
+              Todos <span class="count-pill" id="count-todos">0</span>
+            </button>
+            <button type="button" class="filter-btn" data-filter="imagen" role="tab" aria-selected="false">
+              Fotos <span class="count-pill" id="count-imagen">0</span>
+            </button>
+            <button type="button" class="filter-btn" data-filter="video" role="tab" aria-selected="false">
+              Videos <span class="count-pill" id="count-video">0</span>
+            </button>
+            <button type="button" class="filter-btn" data-filter="texto" role="tab" aria-selected="false">
+              Dedicatorias <span class="count-pill" id="count-texto">0</span>
+            </button>
+          </div>
+
+          <button type="button" id="btn-recargar" class="btn-refresh" title="Actualizar álbum en vivo">
+            <span aria-hidden="true">↻</span> Actualizar
+          </button>
+        </div>
+
+        <!-- Estado de carga inicial -->
+        <div id="galeria-cargando" class="gallery-loading" hidden>
+          <div class="spinner" aria-hidden="true"></div>
+          <p>Cargando recuerdos de la Promoción Navi...</p>
+        </div>
+
+        <!-- Grid tipo galería responsiva inspirada en HTML5 UP -->
+        <div id="grid-galeria" class="gallery-grid" aria-live="polite"></div>
+
+        <!-- Estado vacío cuando un filtro no tiene resultados -->
+        <div id="galeria-vacia" class="gallery-empty" hidden>
+          <p>Aún no hay recuerdos en esta categoría. ¡Sé el primero en compartir uno arriba!</p>
+        </div>
+
+        <!-- Botón de paginación para evitar sobrecargar celulares -->
+        <div id="paginacion-wrap" class="pagination-wrap" hidden>
+          <button type="button" id="btn-cargar-mas" class="btn btn-navy-outline">
+            Ver más recuerdos
+          </button>
+        </div>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <!-- =====================================================
+       SECCIÓN 4: FOOTER OBLIGATORIO
+       ===================================================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-divider" aria-hidden="true"></div>
+      <div class="footer-content">
+        <p class="footer-badge">Promoción Navi · I.E. Gloriabamba de Bolívar</p>
+        <p class="footer-credit"><strong>Creado por Álvaro</strong></p>
+        <p class="footer-date">Fecha: Noviembre 2026</p>
+        <p class="footer-purpose">
+          Este es un proyecto web desarrollado para conmemorar vuestra graduación
+        </p>
+        <p class="footer-wishes">
+          ¡Muchas felicidades y los mejores deseos de éxito, salud y alegría para todos los integrantes de la Promoción Navi y sus queridas familias en este nuevo capítulo de sus vidas!
+        </p>
+        <p class="footer-wishes">
+          "Con especial cariño y gratitud para la miss Patricia, y con todo mi corazón para esa personita especial que hoy inicia una nueva etapa. Que se cumplan todos tus sueños <strong>mi pequeña</strong>."
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================
+       MODAL / LIGHTBOX DE VISTA AMPLIADA
+       ===================================================== -->
+  <div id="modal-visor" class="lightbox" role="dialog" aria-modal="true" aria-labelledby="modal-autor" hidden>
+    <div class="lightbox-backdrop" data-close-modal="true"></div>
+    <div class="lightbox-dialog">
+      <button type="button" id="modal-cerrar" class="lightbox-close" aria-label="Cerrar vista ampliada">✕</button>
+
+      <div class="lightbox-body">
+        <div class="lightbox-stage">
+          <button type="button" id="modal-prev" class="lightbox-nav prev" aria-label="Recuerdo anterior">‹</button>
+          <div id="modal-media" class="lightbox-media"></div>
+          <button type="button" id="modal-next" class="lightbox-nav next" aria-label="Siguiente recuerdo">›</button>
+        </div>
+
+        <aside class="lightbox-caption">
+          <div class="caption-meta">
+            <span id="modal-tipo" class="media-badge">Foto</span>
+            <time id="modal-fecha" class="caption-date"></time>
+          </div>
+          <h3 id="modal-autor"></h3>
+          <p id="modal-mensaje" class="caption-text"></p>
+        </aside>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lógica principal de la aplicación -->
+  <script src="js/app.js" defer></script>
+</body>
+</html>
